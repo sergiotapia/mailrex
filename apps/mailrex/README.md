@@ -1,19 +1,20 @@
 # Mailrex
 
-Simple code kata for Elixir. Fire off emails via HTTP API with built in
-queuing system.
+**TODO: Add description**
 
-# Project setup
+## Installation
 
-This project assumes you're using Elixir 1.7 or higher.
+If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+by adding `mailrex` to your list of dependencies in `mix.exs`:
 
+```elixir
+def deps do
+  [
+    {:mailrex, "~> 0.1.0"}
+  ]
+end
 ```
-mix deps.get
-mix test
-```
 
-You should see all tests pass green.
-
-# Accessing the API
-
-In-progress
+Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
+and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
+be found at [https://hexdocs.pm/mailrex](https://hexdocs.pm/mailrex).
