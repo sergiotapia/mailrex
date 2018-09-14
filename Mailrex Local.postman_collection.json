@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "35c155b0-8142-4674-9a83-67e9e97187a0",
+		"name": "Mailrex Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "mails#index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/mails?token=abc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"mails"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "abc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mails#create - body email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "to",
+							"value": "sergiotapia@outlook.com",
+							"sessionValue": "sergiotapia@outlook.com",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "This is the subject matter",
+							"sessionValue": "This is the subject matter",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "Welcome to the website!",
+							"sessionValue": "Welcome to the website!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/mails?token=abc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"mails"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "abc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mails#create - template and merge vars",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "to",
+							"value": "sergiotapia@outlook.com",
+							"sessionValue": "sergiotapia@outlook.com",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "Forget your password?",
+							"sessionValue": "This is the subject matter",
+							"type": "text"
+						},
+						{
+							"key": "template",
+							"value": "password_reset_email",
+							"sessionValue": "welcome_email",
+							"type": "text"
+						},
+						{
+							"key": "merge_vars[]",
+							"value": "username|sergio",
+							"sessionValue": "username|sergio,",
+							"type": "text"
+						},
+						{
+							"key": "merge_vars[]",
+							"value": "resetPasswordLink|https://google.com",
+							"sessionValue": "resetPasswordLink|https://google.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/mails?token=abc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"mails"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "abc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
