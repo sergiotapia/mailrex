@@ -16,4 +16,8 @@ You should see all tests pass green.
 
 # Accessing the API
 
-In-progress
+Download Postman: https://www.getpostman.com/
+
+Import the file `Mailrex Local.postman_collection.json`
+
+You'll see the endpoints and they're used there.
