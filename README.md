@@ -21,3 +21,10 @@ Download Postman: https://www.getpostman.com/
 Import the file `Mailrex Local.postman_collection.json`
 
 You'll see the endpoints and they're used there.
+
+# Todo
+
+- [x] Setup + Call Mailgun
+- [x] Templatize Emails
+- [x] Create a REST API
+- [ ] Add a queue
