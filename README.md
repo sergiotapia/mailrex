@@ -14,6 +14,22 @@ mix test
 
 You should see all tests pass green.
 
+# Running the project
+
+Create a `.env` file at the root of the project and place the keys:
+
+```
+export MAILGUN_API_KEY=
+export MAILGUN_DOMAIN=
+```
+
+Then load that .env file and run the server.
+
+```
+source .env
+mix phx.server
+```
+
 # Accessing the API
 
 Download Postman: https://www.getpostman.com/
