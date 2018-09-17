@@ -27,7 +27,8 @@ defmodule Mailrex.MixProject do
   defp deps do
     [
       {:html_sanitize_ex, "~> 1.3"},
-      {:bamboo, "~> 1.1"}
+      {:bamboo, "~> 1.1"},
+      {:redix, "~> 0.7.1"}
     ]
   end
 end

@@ -14,7 +14,6 @@ defmodule ApiWeb.Router do
   scope "/api/v1", ApiWeb.Api.V1, as: :api_v1 do
     pipe_through(:authenticated_api)
 
-    get("/mails", MailController, :index)
     post("/mails", MailController, :create)
   end
 end

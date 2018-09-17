@@ -10,6 +10,7 @@ defmodule Mailrex.Application do
     children = [
       # Starts a worker by calling: Mailrex.Worker.start_link(arg)
       # {Mailrex.Worker, arg},
+      {Redix, [[], [name: :redix]]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

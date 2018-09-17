@@ -1,11 +1,6 @@
 defmodule ApiWeb.Api.V1.MailController do
   use ApiWeb, :controller
 
-  def index(conn, _params) do
-    emails = [%{to: "a@email.com", from: "b@email.com", status: "pending"}]
-    json(conn, emails)
-  end
-
   def create(conn, params) do
     merge_vars =
       try do
