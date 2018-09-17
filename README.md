@@ -28,3 +28,6 @@ You'll see the endpoints and they're used there.
 - [x] Templatize Emails
 - [x] Create a REST API
 - [ ] Add a queue
+
+For the Queue feature, I wrote an example GenServer implementation that would pick unsent
+items from a Redis queue, process the email, then mark it for deletion.
