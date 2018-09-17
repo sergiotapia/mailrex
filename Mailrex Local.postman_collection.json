@@ -144,6 +144,130 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "mails#create - Invalid template name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "to",
+							"value": "sergiotapia@outlook.com",
+							"sessionValue": "sergiotapia@outlook.com",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "Forget your password?",
+							"sessionValue": "This is the subject matter",
+							"type": "text"
+						},
+						{
+							"key": "template",
+							"value": "some_random_template",
+							"sessionValue": "welcome_email",
+							"type": "text"
+						},
+						{
+							"key": "merge_vars[]",
+							"value": "username|sergio",
+							"sessionValue": "username|sergio,",
+							"type": "text"
+						},
+						{
+							"key": "merge_vars[]",
+							"value": "resetPasswordLink|https://google.com",
+							"sessionValue": "resetPasswordLink|https://google.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/mails?token=abc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"mails"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "abc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mails#create - Invalid merge_vars",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "to",
+							"value": "sergiotapia@outlook.com",
+							"sessionValue": "sergiotapia@outlook.com",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "Forget your password?",
+							"sessionValue": "This is the subject matter",
+							"type": "text"
+						},
+						{
+							"key": "template",
+							"value": "password_reset_email",
+							"sessionValue": "welcome_email",
+							"type": "text"
+						},
+						{
+							"key": "merge_vars[]",
+							"value": "usernasdfsdf",
+							"sessionValue": "username|sergio,",
+							"type": "text"
+						},
+						{
+							"key": "merge_vars[]",
+							"value": "resetPasswordLink|https://google.com|asdasd",
+							"sessionValue": "resetPasswordLink|https://google.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/mails?token=abc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"mails"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "abc"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

@@ -36,26 +36,27 @@ defmodule Mailrex.MailerTest do
 
   test "returns content for templates properly" do
     assert Mailer.fetch_template_body("password_reset_email") ==
-             Mailrex.Templates.PasswordResetEmail.content()
+             {:ok, Mailrex.Templates.PasswordResetEmail.content()}
 
-    assert Mailer.fetch_template_body("welcome_email") == Mailrex.Templates.WelcomeEmail.content()
+    assert Mailer.fetch_template_body("welcome_email") ==
+             {:ok, Mailrex.Templates.WelcomeEmail.content()}
   end
 
-  test "returns empty string for nonexisting template" do
-    assert Mailer.fetch_template_body("asdf") == ""
+  test "returns error for nonexisting template" do
+    assert Mailer.fetch_template_body("asdf") == {:error, "Template does not exist"}
   end
 
   test "replaces merge vars in email templates" do
     html_body = "<p>*|username|* is signed in at *|date|*.</p>"
 
     result = Mailer.replace_merge_vars(html_body, %{username: "sergio", date: "10/10/2010"})
-    assert result == "<p>sergio is signed in at 10/10/2010.</p>"
+    assert result == {:ok, "<p>sergio is signed in at 10/10/2010.</p>"}
   end
 
   test "ignores tags that aren't in the templates" do
     html_body = "<p>*|username|* registered!</p>"
 
     result = Mailer.replace_merge_vars(html_body, %{username: "sergio", location: "Miami"})
-    assert result == "<p>sergio registered!</p>"
+    assert result == {:ok, "<p>sergio registered!</p>"}
   end
 end
